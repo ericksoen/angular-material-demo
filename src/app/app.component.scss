@@ -1,0 +1,38 @@
+@import '~@angular/material/theming';
+
+#header {
+  margin-bottom: 15px;
+}
+
+.example-form {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.submit > a {
+  float: right;
+  text-decoration: none;
+}
+
+.right-align > p {
+  float: right;
+}
+
+hr {
+  margin-top: 10px;
+}
+
+.order-header {
+  font-size: .85em;
+  color: rgba(0,0,0,.38);
+  font-weight: bolder;
+}
+
+.total {
+  font-weight: bold;
+}

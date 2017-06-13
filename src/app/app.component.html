@@ -1,0 +1,40 @@
+<md-toolbar id="header" color="primary">
+  <button md-icon-button [mdMenuTriggerFor]="menu">
+    <md-icon>more_vert</md-icon>
+  </button>
+  <md-menu #menu="mdMenu">
+    <button md-menu-item>
+      <md-icon>home</md-icon>
+      <span>Home</span>
+    </button>
+    <button md-menu-item>
+      <md-icon>mail_outline</md-icon>
+      <span>Mail</span>
+    </button>
+    <button md-menu-item>
+      <md-icon>gamepad</md-icon>
+      <span>Games</span>
+    </button>
+  </md-menu>
+  <span>Sample Angular Material App</span>
+</md-toolbar>
+
+<md-tab-group>
+  <md-tab label="Navigation">
+    <div class="tab-content">
+      <app-navigation></app-navigation>
+    </div>
+  </md-tab>
+
+  <md-tab label="Data Entry">
+    <div class="tab-content">
+      <app-data-entry></app-data-entry>
+    </div>
+  </md-tab>
+
+  <md-tab label="Slides and Toggles">
+    <div class="tab-content">
+      <app-slides-toggles></app-slides-toggles>
+    </div>
+  </md-tab>
+</md-tab-group>

@@ -1,2 +1,2 @@
-# angular-material-demo
-Demo web site built with Angular Material for Angular 2+
+# Angular Material Demo
+Welcome! This website features several of the components of Angular Material in a convenient demo.

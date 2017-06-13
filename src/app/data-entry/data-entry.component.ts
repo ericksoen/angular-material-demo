@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataEntryComponent implements OnInit {
 
+  private stylists = [
+    'Ariana',
+    'Beyonce',
+    'Coolio'
+  ];
+
   constructor() { }
 
   ngOnInit() {

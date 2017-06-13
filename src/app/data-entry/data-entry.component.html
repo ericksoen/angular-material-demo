@@ -1,1 +1,17 @@
-<p>This form will allow you to schedule an appointment for a haircut.</p>
+<h1>Schedule Hair Appointment</h1>
+
+<md-input-container>
+  <input mdInput placeholder="Stylist" [mdAutocomplete]="auto">
+</md-input-container>
+
+<md-autocomplete #auto="mdAutocomplete">
+  <md-option *ngFor="let stylist of stylists" [value]="stylist">
+    {{ stylist }}
+  </md-option>
+</md-autocomplete>
+
+<md-input-container>
+  <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+  <button mdSuffix [mdDatepickerToggle]="picker"></button>
+</md-input-container>
+<md-datepicker #picker></md-datepicker>

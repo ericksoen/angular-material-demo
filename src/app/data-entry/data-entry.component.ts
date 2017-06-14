@@ -27,6 +27,8 @@ export class DataEntryComponent implements OnInit {
   ];
 
   filteredTimes: any;
+  isLoadingSpinner = false;
+  isLoadingBar = false;
 
   constructor(public dialog: MdDialog) { }
 
@@ -35,6 +37,14 @@ export class DataEntryComponent implements OnInit {
   
   openDialog() {
     this.dialog.open(DialogOverviewExampleDialog);
+  }
+
+  showLoadingSpinner() {
+    this.isLoadingSpinner = !this.isLoadingSpinner;
+  }
+
+  showLoadingBar() {
+    this.isLoadingBar = !this.isLoadingBar;
   }
 
 }

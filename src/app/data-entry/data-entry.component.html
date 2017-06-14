@@ -49,4 +49,26 @@
     </md-grid-tile>
   </md-grid-list>
   <button md-raised-button (click)="openDialog()">Schedule</button>
+  <md-grid-list cols="2" rowHeight="300px">
+    <md-grid-tile>
+      <div layout="column" layout-fill>
+        <div>
+          <button md-raised-button (click)="showLoadingSpinner()">Show me a loading spinner!</button>
+        </div>
+        <div *ngIf="isLoadingSpinner" class="loading" align="center">
+          <md-progress-spinner class="example-margin load" color="primary" mode="indeterminate"></md-progress-spinner>
+        </div>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile>
+      <div layout="column" layout-fill>
+        <div>
+          <button md-raised-button (click)="showLoadingBar()">Show me a loading bar!</button>
+        </div>
+        <div *ngIf="isLoadingBar" class="loading" align="center">
+          <md-progress-bar class="example-margin load" color="primary" mode="indeterminate"></md-progress-bar>
+        </div>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
 </form>

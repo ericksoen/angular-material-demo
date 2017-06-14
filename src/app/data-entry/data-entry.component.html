@@ -3,35 +3,50 @@
 </div>
 
 <form class="example-form">
-
-  <md-grid-list cols="1" rowHeight="100px">
+  <md-grid-list cols="2" rowHeight="300px">
     <md-grid-tile>
-      <md-select placeholder="Select your Stylist" [(ngModel)]="selectedStylist" name="a">
-        <md-option *ngFor="let stylist of stylists" [value]="stylist">
-          {{ stylist }}
-        </md-option>
-      </md-select>
+      <div layout="column" layout-fill>
+        <md-select placeholder="Select your Stylist" [(ngModel)]="selectedStylist" name="a">
+          <md-option *ngFor="let stylist of stylists" [value]="stylist">
+            {{ stylist }}
+          </md-option>
+        </md-select>
+        <p> </p>
+        <div>
+          <md-checkbox>Haircut</md-checkbox>
+        </div>
+        <div>
+          <md-checkbox>Style/Up-dos</md-checkbox>
+        </div>
+        <div>
+          <md-checkbox>Color</md-checkbox>
+        </div>
+        <div>
+          <md-checkbox>Highlights</md-checkbox>
+        </div>
+        <div>
+          <md-checkbox>Keratin</md-checkbox>
+        </div>
+      </div>
     </md-grid-tile>
     <md-grid-tile>
-      <div>
-        <md-input-container>
-          <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-          <button mdSuffix [mdDatepickerToggle]="picker"></button>
-        </md-input-container>
-        <md-datepicker #picker></md-datepicker>
+      <div layout="column" layout-fill>
+        <div>
+          <md-input-container>
+            <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+            <button mdSuffix [mdDatepickerToggle]="picker"></button>
+          </md-input-container>
+          <md-datepicker #picker></md-datepicker>
+        </div>
+        <div>
+          <md-radio-group class="example-radio-group" [(ngModel)]="selectedTime" name="b">
+            <md-radio-button class="example-radio-button" *ngFor="let time of times" [value]="time">
+              {{ time }}
+            </md-radio-button>
+          </md-radio-group>
+        </div>
       </div>
-      <div>
-        <md-radio-group class="example-radio-group" [(ngModel)]="selectedTime" name="b">
-          <md-radio-button class="example-radio-button" *ngFor="let time of times" [value]="time">
-            {{ time }}
-          </md-radio-button>
-        </md-radio-group>
-      </div>
-    </md-grid-tile>
-    <md-grid-tile>
-      <p>Services</p>
     </md-grid-tile>
   </md-grid-list>
-
   <button md-raised-button (click)="openDialog()">Schedule</button>
 </form>

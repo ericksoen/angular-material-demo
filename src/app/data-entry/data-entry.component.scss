@@ -12,5 +12,14 @@
 }
 
 button {
-  float: right;
+  display: flex;
+  margin: auto;
+}
+
+.mat-select {
+  padding: 10px;
+}
+
+.mat-input-container {
+  padding: 10px;
 }

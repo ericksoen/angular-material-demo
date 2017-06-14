@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { States } from './states';
+import { MdDialog } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,7 @@ import { States } from './states';
 })
 export class AppComponent {
   title = 'app works!';
+
+  constructor() { }
+
 }

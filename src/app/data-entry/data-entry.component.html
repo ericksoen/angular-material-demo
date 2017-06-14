@@ -1,17 +1,37 @@
-<h1>Schedule Hair Appointment</h1>
+<div>
+  <h1>Schedule Hair Appointment</h1>
+</div>
 
-<md-input-container>
-  <input mdInput placeholder="Stylist" [mdAutocomplete]="auto">
-</md-input-container>
+<form class="example-form">
 
-<md-autocomplete #auto="mdAutocomplete">
-  <md-option *ngFor="let stylist of stylists" [value]="stylist">
-    {{ stylist }}
-  </md-option>
-</md-autocomplete>
+  <md-grid-list cols="1" rowHeight="100px">
+    <md-grid-tile>
+      <md-select placeholder="Select your Stylist" [(ngModel)]="selectedStylist" name="a">
+        <md-option *ngFor="let stylist of stylists" [value]="stylist">
+          {{ stylist }}
+        </md-option>
+      </md-select>
+    </md-grid-tile>
+    <md-grid-tile>
+      <div>
+        <md-input-container>
+          <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+          <button mdSuffix [mdDatepickerToggle]="picker"></button>
+        </md-input-container>
+        <md-datepicker #picker></md-datepicker>
+      </div>
+      <div>
+        <md-radio-group class="example-radio-group" [(ngModel)]="selectedTime" name="b">
+          <md-radio-button class="example-radio-button" *ngFor="let time of times" [value]="time">
+            {{ time }}
+          </md-radio-button>
+        </md-radio-group>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile>
+      <p>Services</p>
+    </md-grid-tile>
+  </md-grid-list>
 
-<md-input-container>
-  <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-  <button mdSuffix [mdDatepickerToggle]="picker"></button>
-</md-input-container>
-<md-datepicker #picker></md-datepicker>
+  <button md-raised-button (click)="openDialog()">Schedule</button>
+</form>

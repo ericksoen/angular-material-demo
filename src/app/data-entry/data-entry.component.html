@@ -1,17 +1,74 @@
-<h1>Schedule Hair Appointment</h1>
+<div>
+  <h1>Schedule Hair Appointment</h1>
+</div>
 
-<md-input-container>
-  <input mdInput placeholder="Stylist" [mdAutocomplete]="auto">
-</md-input-container>
-
-<md-autocomplete #auto="mdAutocomplete">
-  <md-option *ngFor="let stylist of stylists" [value]="stylist">
-    {{ stylist }}
-  </md-option>
-</md-autocomplete>
-
-<md-input-container>
-  <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-  <button mdSuffix [mdDatepickerToggle]="picker"></button>
-</md-input-container>
-<md-datepicker #picker></md-datepicker>
+<form class="example-form">
+  <md-grid-list cols="2" rowHeight="300px">
+    <md-grid-tile>
+      <div layout="column" layout-fill>
+        <md-select placeholder="Select your Stylist" [(ngModel)]="selectedStylist" name="a">
+          <md-option *ngFor="let stylist of stylists" [value]="stylist">
+            {{ stylist }}
+          </md-option>
+        </md-select>
+        <p> </p>
+        <div>
+          <md-checkbox>Haircut</md-checkbox>
+        </div>
+        <div>
+          <md-checkbox>Style/Up-dos</md-checkbox>
+        </div>
+        <div>
+          <md-checkbox>Color</md-checkbox>
+        </div>
+        <div>
+          <md-checkbox>Highlights</md-checkbox>
+        </div>
+        <div>
+          <md-checkbox>Keratin</md-checkbox>
+        </div>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile>
+      <div layout="column" layout-fill>
+        <div>
+          <md-input-container>
+            <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+            <button mdSuffix [mdDatepickerToggle]="picker"></button>
+          </md-input-container>
+          <md-datepicker #picker></md-datepicker>
+        </div>
+        <div>
+          <md-radio-group class="example-radio-group" [(ngModel)]="selectedTime" name="b">
+            <md-radio-button class="example-radio-button" *ngFor="let time of times" [value]="time">
+              {{ time }}
+            </md-radio-button>
+          </md-radio-group>
+        </div>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
+  <button md-raised-button (click)="openDialog()">Schedule</button>
+  <md-grid-list cols="2" rowHeight="300px">
+    <md-grid-tile>
+      <div layout="column" layout-fill>
+        <div>
+          <button md-raised-button (click)="showLoadingSpinner()">Show me a loading spinner!</button>
+        </div>
+        <div *ngIf="isLoadingSpinner" class="loading" align="center">
+          <md-progress-spinner class="example-margin load" color="primary" mode="indeterminate"></md-progress-spinner>
+        </div>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile>
+      <div layout="column" layout-fill>
+        <div>
+          <button md-raised-button (click)="showLoadingBar()">Show me a loading bar!</button>
+        </div>
+        <div *ngIf="isLoadingBar" class="loading" align="center">
+          <md-progress-bar class="example-margin load" color="primary" mode="indeterminate"></md-progress-bar>
+        </div>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
+</form>

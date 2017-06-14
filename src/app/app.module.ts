@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { DataEntryComponent } from './data-entry/data-entry.component';
 import { SlidesTogglesComponent } from './slides-toggles/slides-toggles.component';
+import { DialogOverviewExampleDialog } from './dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     DataEntryComponent,
-    SlidesTogglesComponent
+    SlidesTogglesComponent,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -25,9 +27,11 @@ import { SlidesTogglesComponent } from './slides-toggles/slides-toggles.componen
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MdNativeDateModule
+    MdNativeDateModule,
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ DialogOverviewExampleDialog, ]
 })
 export class AppModule { }

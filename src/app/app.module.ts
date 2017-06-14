@@ -8,7 +8,6 @@ import { MaterialModule, MdNativeDateModule } from '@angular/material';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { DataEntryComponent } from './data-entry/data-entry.component';
 import { SlidesTogglesComponent } from './slides-toggles/slides-toggles.component';
 import { DialogOverviewExampleDialog } from './dialog.component';
@@ -16,7 +15,6 @@ import { DialogOverviewExampleDialog } from './dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
     DataEntryComponent,
     SlidesTogglesComponent,
     DialogOverviewExampleDialog
